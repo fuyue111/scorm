@@ -1,0 +1,22 @@
+        function formatTimestamp(date) {
+            if (typeof (date) === "undefined") {
+                date = new Date();
+            } else {
+                date = new Date(date);
+            }
+
+            var year = date.getFullYear();
+            var month = startWithZero(date.getMonth() + 1);
+            var day = startWithZero(date.getDate());
+            var hours = startWithZero(date.getHours());
+            var minutes = startWithZero(date.getMinutes());
+            var seconds = startWithZero(date.getSeconds());
+            var timestamp = year + "-" + month + "-" + day + "T" + hours + ":" + minutes + ":" + seconds;
+
+            return timestamp;
+        }
+
+        function startWithZero(num) {
+            num = num >= 10 ? num : ("0" + num);
+            return num;
+        }
